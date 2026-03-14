@@ -6,27 +6,59 @@ interface Props {
 }
 
 const SlidePreview: React.FC<Props> = ({ slide }) => {
-  // Helpers to determine color brightness for contrast adjustments (simple version)
+  // Helper to determine if background is dark for contrast adjustments
   const isDarkBg =
-    slide.backgroundColor === "#1e1e1e" || slide.backgroundColor === "#0f172a";
+    slide.backgroundColor === "#1e1e1e" || 
+    slide.backgroundColor === "#0f172a" ||
+    slide.backgroundColor === "#1E293B";
 
   return (
     <div
       className="slide-preview"
       dir="rtl"
-      style={{ backgroundColor: slide.backgroundColor, color: slide.textColor }}
+      style={{ 
+        backgroundColor: slide.backgroundColor, 
+        color: slide.textColor,
+        fontFamily: '"Cairo", "Tajawal", sans-serif'
+      }}
     >
       {/* Custom CSS Injection */}
       {slide.customCss && <style>{slide.customCss}</style>}
 
-      {/* Decorative Background Elements */}
+      {/* Decorative Background Pattern */}
       <div
         className="slide-bg-pattern"
         style={{
-          opacity: isDarkBg ? 0.05 : 0.1,
+          opacity: isDarkBg ? 0.03 : 0.05,
           filter: isDarkBg ? "invert(1)" : "none",
         }}
       ></div>
+
+      {/* Subtle Gradient Overlay - Linear */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          background: `linear-gradient(135deg, ${slide.themeColor}10 0%, transparent 40%, ${slide.themeColor}08 100%)`,
+          pointerEvents: "none",
+          zIndex: 1,
+        }}
+      />
+
+      {/* Radial Gradient for Depth */}
+      <div
+        style={{
+          position: "absolute",
+          top: "-50%",
+          left: "50%",
+          transform: "translateX(-50%)",
+          width: "150%",
+          height: "100%",
+          background: `radial-gradient(ellipse at center, ${slide.themeColor}06 0%, transparent 70%)`,
+          pointerEvents: "none",
+          zIndex: 1,
+        }}
+      />
 
       {/* Logo Rendering */}
       {slide.logoUrl && (
@@ -37,27 +69,44 @@ const SlidePreview: React.FC<Props> = ({ slide }) => {
 
       {/* Content Container */}
       <div className="slide-content-wrapper">
-        {/* Title */}
-        <h2 className="slide-title" style={{ color: slide.textColor }}>
+        {/* Title with Modern Typography */}
+        <h2 
+          className="slide-title" 
+          style={{ 
+            color: slide.textColor,
+            textShadow: isDarkBg ? 'none' : '0 2px 4px rgba(0,0,0,0.05)',
+          }}
+        >
           {slide.title}
         </h2>
 
-        {/* Subtitle with decorative underline/box */}
+        {/* Subtitle with Soft Background Highlight */}
         <div className="slide-subtitle-wrapper">
           <div
             className="slide-subtitle-bg"
-            style={{ backgroundColor: slide.themeColor, opacity: 0.1 }}
+            style={{ 
+              backgroundColor: slide.themeColor, 
+              opacity: 0.08,
+              borderRadius: '20px',
+            }}
           ></div>
           <p
             className="slide-subtitle"
-            style={{ color: slide.textColor, opacity: 0.9 }}
+            style={{ 
+              color: slide.textColor, 
+              opacity: 0.9,
+              fontFamily: '"Tajawal", sans-serif',
+            }}
           >
             {slide.subtitle.split(/(\d+)/).map((part, i) =>
               /\d+/.test(part) ? (
                 <span
                   key={i}
                   className="slide-highlight"
-                  style={{ color: slide.themeColor }}
+                  style={{ 
+                    color: slide.themeColor,
+                    fontWeight: 700,
+                  }}
                 >
                   {part}
                 </span>
@@ -68,7 +117,7 @@ const SlidePreview: React.FC<Props> = ({ slide }) => {
           </p>
         </div>
 
-        {/* Percentage Highlight */}
+        {/* Percentage Highlight with Gradient */}
         <div className="slide-percentage-wrapper">
           <div className="slide-percentage-container">
             <span
@@ -80,30 +129,58 @@ const SlidePreview: React.FC<Props> = ({ slide }) => {
             <span
               className="slide-percentage-main"
               style={{
-                color: slide.themeColor,
-                WebkitTextStroke: `1px ${slide.themeColor}33`,
+                fontFamily: '"Cairo", sans-serif',
+                gap: '0.5rem',
               }}
             >
-              بنسبة{" "}
-              <span className="slide-percentage-number">
+              <span style={{ 
+                color: slide.textColor, 
+                opacity: 0.6,
+                fontSize: '0.6em',
+                fontWeight: 500,
+              }}>
+                بنسبة
+              </span>
+              <span 
+                className="slide-percentage-number"
+                style={{
+                  color: slide.themeColor,
+                  fontWeight: 900,
+                }}
+              >
                 {slide.percentage}
               </span>
             </span>
           </div>
         </div>
 
-        {/* Comparative Values Section */}
-        <div className="slide-stats-grid">
+        {/* Comparative Values Section with Card Style */}
+        <div 
+          className="slide-stats-grid"
+          style={{
+            background: isDarkBg 
+              ? `linear-gradient(180deg, rgba(255,255,255,0.03) 0%, transparent 100%)`
+              : `linear-gradient(180deg, ${slide.themeColor}08 0%, transparent 100%)`,
+            borderRadius: '20px',
+          }}
+        >
           <div className="slide-stat-left">
             <div
               className="slide-stat-value"
-              style={{ color: slide.textColor }}
+              style={{ 
+                color: slide.textColor,
+                fontFamily: '"Cairo", sans-serif',
+              }}
             >
               {slide.val1}
             </div>
             <div
               className="slide-stat-label"
-              style={{ color: slide.textColor, opacity: 0.6 }}
+              style={{ 
+                color: slide.textColor, 
+                opacity: 0.6,
+                fontFamily: '"Tajawal", sans-serif',
+              }}
             >
               {slide.label1}
             </div>
@@ -112,7 +189,11 @@ const SlidePreview: React.FC<Props> = ({ slide }) => {
           <div className="slide-comparison-wrapper">
             <div
               className="slide-comparison-badge"
-              style={{ backgroundColor: slide.themeColor }}
+              style={{ 
+                backgroundColor: slide.themeColor,
+                borderRadius: '9999px',
+                boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+              }}
             >
               {slide.comparisonLabel}
             </div>
@@ -121,27 +202,42 @@ const SlidePreview: React.FC<Props> = ({ slide }) => {
           <div className="slide-stat-right">
             <div
               className="slide-stat-value"
-              style={{ color: slide.textColor }}
+              style={{ 
+                color: slide.textColor,
+                fontFamily: '"Cairo", sans-serif',
+              }}
             >
               {slide.val2}
             </div>
             <div
               className="slide-stat-label"
-              style={{ color: slide.textColor, opacity: 0.6 }}
+              style={{ 
+                color: slide.textColor, 
+                opacity: 0.6,
+                fontFamily: '"Tajawal", sans-serif',
+              }}
             >
               {slide.label2}
             </div>
           </div>
         </div>
 
-        {/* Detailed Description */}
+        {/* Detailed Description with Separator */}
         <div
           className="slide-description-wrapper"
-          style={{ borderTop: `1px solid ${slide.textColor}22` }}
+          style={{ 
+            borderTop: `1px solid ${slide.textColor}15`,
+            paddingTop: '1.25rem',
+          }}
         >
           <p
             className="slide-description"
-            style={{ color: slide.textColor, opacity: 0.8 }}
+            style={{ 
+              color: slide.textColor, 
+              opacity: 0.85,
+              fontFamily: '"Tajawal", sans-serif',
+              letterSpacing: '0.01em',
+            }}
           >
             {slide.description
               .split(/(\d+%?|\d+ مليون دولار)/)
@@ -150,7 +246,10 @@ const SlidePreview: React.FC<Props> = ({ slide }) => {
                   <span
                     key={i}
                     className="slide-desc-highlight"
-                    style={{ color: slide.themeColor }}
+                    style={{ 
+                      color: slide.themeColor,
+                      fontWeight: 700,
+                    }}
                   >
                     {part}
                   </span>
@@ -162,63 +261,88 @@ const SlidePreview: React.FC<Props> = ({ slide }) => {
         </div>
       </div>
 
-      {/* Footer Visual Section */}
+      {/* Footer Visual Section with Modern Glow */}
       <div className="slide-footer">
-        {/* Background Circle Element */}
+        {/* Background Glow Element */}
         <div
           className="slide-footer-glow"
-          style={{ backgroundColor: slide.themeColor, opacity: 0.2 }}
-        ></div>
-        <div
-          className="slide-footer-circle"
-          style={{ backgroundColor: slide.themeColor, opacity: 0.4 }}
+          style={{ 
+            backgroundColor: slide.themeColor, 
+            opacity: 0.15,
+            filter: 'blur(60px)',
+          }}
         ></div>
 
-        {/* Illustrative Image */}
+        {/* Illustrative Image with Rounded Corners */}
         <div className="slide-image-container">
           <img
             src={slide.footerImage}
             alt="Footer Visual"
             crossOrigin="anonymous"
             className="slide-footer-img"
+            style={{
+              borderRadius: '20px',
+            }}
           />
         </div>
       </div>
 
-      {/* Branding Footer */}
+      {/* Modern Branding Footer */}
       <div
         style={{
           position: "absolute",
-          bottom: "24px",
+          bottom: "28px",
           left: "32px",
           right: "32px",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
           zIndex: 50,
-          opacity: 0.8,
-          fontSize: "18px",
-          fontWeight: "bold",
+          opacity: 0.75,
+          fontSize: "16px",
+          fontFamily: '"Tajawal", sans-serif',
+          fontWeight: 600,
         }}
       >
-        <span style={{ color: slide.textColor }}>منصة المستثمر</span>
+        <span 
+          style={{ 
+            color: slide.textColor,
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+          }}
+        >
+          <div
+            style={{
+              width: '6px',
+              height: '6px',
+              borderRadius: '50%',
+              backgroundColor: slide.themeColor,
+            }}
+          />
+          منصة التاجر الرقمية
+        </span>
         <span
           style={{
             color: slide.textColor,
             display: "flex",
             alignItems: "center",
-            gap: "8px",
+            gap: "10px",
+            fontFamily: '"Cairo", sans-serif',
+            fontSize: '14px',
+            letterSpacing: '0.5px',
           }}
         >
-          al-investor
+          Al-Tajer Digital
           <div
             style={{
-              width: "8px",
-              height: "8px",
-              borderRadius: "50%",
-              backgroundColor: slide.themeColor,
+              width: '10px',
+              height: '10px',
+              borderRadius: '50%',
+              background: `linear-gradient(135deg, ${slide.themeColor} 0%, ${slide.secondaryColor} 100%)`,
+              boxShadow: `0 2px 8px ${slide.themeColor}40`,
             }}
-          ></div>
+          />
         </span>
       </div>
     </div>

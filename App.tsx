@@ -1,19 +1,17 @@
-
 import React, { useState, useCallback, useRef } from 'react';
-import { 
-  Plus, 
-  Trash2, 
-  Download, 
-  Sparkles, 
-  ChevronRight, 
+import {
+  Plus,
+  Trash2,
+  Download,
+  Sparkles,
+  ChevronRight,
   ChevronLeft,
-  Image as ImageIcon,
-  Palette,
-  Layout,
-  Type as TypeIcon,
   Layers,
   Loader2,
-  Code
+  Code,
+  Palette,
+  Type as TypeIcon,
+  Layout
 } from 'lucide-react';
 import * as htmlToImage from 'html-to-image';
 import { SlideData } from './types';
@@ -21,6 +19,7 @@ import SlidePreview from './components/SlidePreview';
 import EditorPanel from './components/EditorPanel';
 import { generateProfessionalCopy } from './services/geminiService';
 
+// Default Slide with Al-Tajer Digital Branding
 const DEFAULT_SLIDE: SlideData = {
   id: Date.now().toString(),
   title: 'الصادرات الهندسية',
@@ -33,10 +32,10 @@ const DEFAULT_SLIDE: SlideData = {
   label2: 'لنفس الفترة عام 2023',
   description: 'وكشف تقرير للمجلس التصديري للصناعات الهندسية أن الصادرات ارتفعت في أكتوبر 2024 بالمقارنة بنفس الشهر 2023 بنسبة 14% حيث بلغت 458 مليون دولار.',
   footerImage: 'https://picsum.photos/seed/industrial/800/400',
-  themeColor: '#C8102E',     // Egypt Red
-  secondaryColor: '#FFD700', // Gold/Yellow
-  textColor: '#1e293b',      // Slate 800
-  backgroundColor: '#ffffff', // White
+  themeColor: '#2563EB',     // Electric Blue - Al-Tajer Primary
+  secondaryColor: '#3B82F6', // Light Blue - Al-Tajer Secondary
+  textColor: '#0F172A',      // Charcoal Black - Headlines
+  backgroundColor: '#FFFFFF', // White Background
   logoUrl: '',
   customCss: ''
 };
@@ -47,7 +46,7 @@ const App: React.FC = () => {
   const [isAiLoading, setIsAiLoading] = useState(false);
   const [isExporting, setIsExporting] = useState(false);
   const [activeTab, setActiveTab] = useState<'content' | 'theme' | 'css'>('content');
-  
+
   const slideRef = useRef<HTMLDivElement>(null);
 
   const updateSlide = (newData: Partial<SlideData>) => {
@@ -77,12 +76,12 @@ const App: React.FC = () => {
 
   const handleExport = async () => {
     if (!slideRef.current || isExporting) return;
-    
+
     setIsExporting(true);
     try {
       // Small delay to ensure any layout changes are settled
       await new Promise(r => setTimeout(r, 100));
-      
+
       const dataUrl = await htmlToImage.toPng(slideRef.current, {
         quality: 1,
         pixelRatio: 3, // High resolution (3x) for professional quality
@@ -102,7 +101,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="flex h-screen bg-slate-50 text-slate-900 overflow-hidden font-['IBM_Plex_Sans_Arabic']">
+    <div className="flex h-screen bg-slate-50 text-slate-900 overflow-hidden font-['Tajawal']">
       {/* Navigation Sidebar */}
       <nav className="nav-sidebar">
         <div className="nav-logo">

@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { Sparkles, Save, ChevronDown, ChevronUp, RefreshCw, Palette, Code, Check, Trash2, Upload, Image as ImageIcon } from 'lucide-react';
+import { Sparkles, Save, ChevronDown, ChevronUp, RefreshCw, Palette, Code, Trash2, Upload, Image as ImageIcon, Check } from 'lucide-react';
 import { SlideData } from '../types';
 
 interface Props {
@@ -11,16 +10,16 @@ interface Props {
   activeTab: 'content' | 'theme' | 'css';
 }
 
-// Preset Themes Data
+// Modern Theme Presets - Al-Tajer Digital Inspired
 const THEMES = [
-  { id: 'navy', name: 'كحلي المستثمر', colors: { theme: '#000035', secondary: '#06b6d4', text: '#1e293b', bg: '#ffffff' } },
-  { id: 'china', name: 'الأحمر الصيني', colors: { theme: '#D80000', secondary: '#FFD700', text: '#1e293b', bg: '#ffffff' } },
-  { id: 'fuchsia', name: 'فوشيا التحليل', colors: { theme: '#3b82f6', secondary: '#ff0080', text: '#1e293b', bg: '#ffffff' } },
-  { id: 'cyan', name: 'سيان الابتكار', colors: { theme: '#0f172a', secondary: '#00f2ea', text: '#1e293b', bg: '#ffffff' } },
-  { id: 'lime', name: 'لايم النمو', colors: { theme: '#2563eb', secondary: '#84cc16', text: '#1e293b', bg: '#ffffff' } },
-  { id: 'orange', name: 'برتقالي الحركة', colors: { theme: '#f59e0b', secondary: '#ff4500', text: '#1e293b', bg: '#ffffff' } },
-  { id: 'dark', name: 'الوضع الداكن', colors: { theme: '#ff0055', secondary: '#00ffaa', text: '#e2e8f0', bg: '#1e1e1e' } },
-  { id: 'purple', name: 'بنفسجي العمق', colors: { theme: '#5b21b6', secondary: '#7c3aed', text: '#1e293b', bg: '#ffffff' } },
+  { id: 'electric', name: 'أزرق كهربائي', colors: { theme: '#2563EB', secondary: '#3B82F6', text: '#0F172A', bg: '#FFFFFF' } },
+  { id: 'mint', name: 'نعناع عصري', colors: { theme: '#059669', secondary: '#10B981', text: '#0F172A', bg: '#FFFFFF' } },
+  { id: 'purple', name: 'بنفسجي عميق', colors: { theme: '#7C3AED', secondary: '#8B5CF6', text: '#0F172A', bg: '#FFFFFF' } },
+  { id: 'orange', name: 'برتقالي حيوي', colors: { theme: '#EA580C', secondary: '#F97316', text: '#0F172A', bg: '#FFFFFF' } },
+  { id: 'rose', name: 'وردي ناعم', colors: { theme: '#E11D48', secondary: '#FB7185', text: '#0F172A', bg: '#FFFFFF' } },
+  { id: 'cyan', name: 'سيان مبتكر', colors: { theme: '#0891B2', secondary: '#06B6D4', text: '#0F172A', bg: '#FFFFFF' } },
+  { id: 'dark', name: 'الوضع الليلي', colors: { theme: '#3B82F6', secondary: '#8B5CF6', text: '#F1F5F9', bg: '#0F172A' } },
+  { id: 'gold', name: 'ذهبي فاخر', colors: { theme: '#CA8A04', secondary: '#EAB308', text: '#0F172A', bg: '#FFFFFF' } },
 ];
 
 const EditorPanel: React.FC<Props> = ({ slide, onUpdate, onAiGenerate, isAiLoading, activeTab }) => {
@@ -131,8 +130,8 @@ const EditorPanel: React.FC<Props> = ({ slide, onUpdate, onAiGenerate, isAiLoadi
                     </div>
                     {/* Progress Bar Visual */}
                     <div className="theme-preview-bar">
-                      <div className="theme-preview-main" style={{ backgroundColor: isActive ? theme.colors.theme : '#cbd5e1' }}></div>
-                      <div className="theme-preview-secondary" style={{ backgroundColor: isActive ? theme.colors.secondary : '#e2e8f0' }}></div>
+                      <div className="theme-preview-main" style={{ backgroundColor: isActive ? theme.colors.theme : '#CBD5E1' }}></div>
+                      <div className="theme-preview-secondary" style={{ backgroundColor: isActive ? theme.colors.secondary : '#E2E8F0' }}></div>
                     </div>
                   </button>
                 );
@@ -203,7 +202,7 @@ const EditorPanel: React.FC<Props> = ({ slide, onUpdate, onAiGenerate, isAiLoadi
                       title={logo.name}
                     >
                       <img src={logo.path} alt={logo.name} className="logo-preset-img" />
-                      {isActive && <div className="logo-preset-check">✓</div>}
+                      {isActive && <div className="logo-preset-check"><Check size={12} strokeWidth={3} /></div>}
                     </button>
                   );
                 })}
@@ -299,7 +298,7 @@ const EditorPanel: React.FC<Props> = ({ slide, onUpdate, onAiGenerate, isAiLoadi
       {/* AI Assistant Section */}
       <div className="ai-assistant-section">
         <div className="ai-assistant-header">
-          <Sparkles size={20} className="text-red-600" />
+          <Sparkles size={20} className="text-blue-600" />
           <h3 className="ai-assistant-title">مساعد المحتوى الذكي</h3>
         </div>
         <div className="ai-input-container">
