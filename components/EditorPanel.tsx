@@ -10,7 +10,7 @@ interface Props {
   activeTab: 'content' | 'theme' | 'css';
 }
 
-// Modern Theme Presets - Al-Tajer Digital Inspired
+// Modern Theme Presets - dtajer Inspired
 const THEMES = [
   { id: 'electric', name: 'أزرق كهربائي', colors: { theme: '#2563EB', secondary: '#3B82F6', text: '#0F172A', bg: '#FFFFFF' } },
   { id: 'mint', name: 'نعناع عصري', colors: { theme: '#059669', secondary: '#10B981', text: '#0F172A', bg: '#FFFFFF' } },

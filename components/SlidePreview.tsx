@@ -333,7 +333,7 @@ const SlidePreview: React.FC<Props> = ({ slide }) => {
             letterSpacing: '0.5px',
           }}
         >
-          Al-Tajer Digital
+          dtajer
           <div
             style={{
               width: '10px',

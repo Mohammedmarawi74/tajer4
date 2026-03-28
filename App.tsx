@@ -19,7 +19,7 @@ import SlidePreview from './components/SlidePreview';
 import EditorPanel from './components/EditorPanel';
 import { generateProfessionalCopy } from './services/geminiService';
 
-// Default Slide with Al-Tajer Digital Branding
+// Default Slide with dtajer Branding
 const DEFAULT_SLIDE: SlideData = {
   id: Date.now().toString(),
   title: 'الصادرات الهندسية',
@@ -32,8 +32,8 @@ const DEFAULT_SLIDE: SlideData = {
   label2: 'لنفس الفترة عام 2023',
   description: 'وكشف تقرير للمجلس التصديري للصناعات الهندسية أن الصادرات ارتفعت في أكتوبر 2024 بالمقارنة بنفس الشهر 2023 بنسبة 14% حيث بلغت 458 مليون دولار.',
   footerImage: 'https://picsum.photos/seed/industrial/800/400',
-  themeColor: '#2563EB',     // Electric Blue - Al-Tajer Primary
-  secondaryColor: '#3B82F6', // Light Blue - Al-Tajer Secondary
+  themeColor: '#2563EB',     // Electric Blue - dtajer Primary
+  secondaryColor: '#3B82F6', // Light Blue - dtajer Secondary
   textColor: '#0F172A',      // Charcoal Black - Headlines
   backgroundColor: '#FFFFFF', // White Background
   logoUrl: '',
