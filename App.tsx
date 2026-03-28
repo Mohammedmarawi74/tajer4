@@ -101,7 +101,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="flex h-screen bg-slate-50 text-slate-900 overflow-hidden font-['Tajawal']">
+    <div className="flex h-screen bg-slate-50 text-slate-900 overflow-hidden font-['IBM_Plex_Sans_Arabic']">
       {/* Navigation Sidebar */}
       <nav className="nav-sidebar">
         <div className="nav-logo">

@@ -19,7 +19,7 @@ const SlidePreview: React.FC<Props> = ({ slide }) => {
       style={{ 
         backgroundColor: slide.backgroundColor, 
         color: slide.textColor,
-        fontFamily: '"Cairo", "Tajawal", sans-serif'
+        fontFamily: '"IBM Plex Sans Arabic", sans-serif'
       }}
     >
       {/* Custom CSS Injection */}
@@ -95,7 +95,7 @@ const SlidePreview: React.FC<Props> = ({ slide }) => {
             style={{ 
               color: slide.textColor, 
               opacity: 0.9,
-              fontFamily: '"Tajawal", sans-serif',
+              fontFamily: '"IBM Plex Sans Arabic", sans-serif',
             }}
           >
             {slide.subtitle.split(/(\d+)/).map((part, i) =>
@@ -129,7 +129,7 @@ const SlidePreview: React.FC<Props> = ({ slide }) => {
             <span
               className="slide-percentage-main"
               style={{
-                fontFamily: '"Cairo", sans-serif',
+                fontFamily: '"IBM Plex Sans Arabic", sans-serif',
                 gap: '0.5rem',
               }}
             >
@@ -169,7 +169,7 @@ const SlidePreview: React.FC<Props> = ({ slide }) => {
               className="slide-stat-value"
               style={{ 
                 color: slide.textColor,
-                fontFamily: '"Cairo", sans-serif',
+                fontFamily: '"IBM Plex Sans Arabic", sans-serif',
               }}
             >
               {slide.val1}
@@ -179,7 +179,7 @@ const SlidePreview: React.FC<Props> = ({ slide }) => {
               style={{ 
                 color: slide.textColor, 
                 opacity: 0.6,
-                fontFamily: '"Tajawal", sans-serif',
+                fontFamily: '"IBM Plex Sans Arabic", sans-serif',
               }}
             >
               {slide.label1}
@@ -204,7 +204,7 @@ const SlidePreview: React.FC<Props> = ({ slide }) => {
               className="slide-stat-value"
               style={{ 
                 color: slide.textColor,
-                fontFamily: '"Cairo", sans-serif',
+                fontFamily: '"IBM Plex Sans Arabic", sans-serif',
               }}
             >
               {slide.val2}
@@ -214,7 +214,7 @@ const SlidePreview: React.FC<Props> = ({ slide }) => {
               style={{ 
                 color: slide.textColor, 
                 opacity: 0.6,
-                fontFamily: '"Tajawal", sans-serif',
+                fontFamily: '"IBM Plex Sans Arabic", sans-serif',
               }}
             >
               {slide.label2}
@@ -235,7 +235,7 @@ const SlidePreview: React.FC<Props> = ({ slide }) => {
             style={{ 
               color: slide.textColor, 
               opacity: 0.85,
-              fontFamily: '"Tajawal", sans-serif',
+              fontFamily: '"IBM Plex Sans Arabic", sans-serif',
               letterSpacing: '0.01em',
             }}
           >
@@ -300,7 +300,7 @@ const SlidePreview: React.FC<Props> = ({ slide }) => {
           zIndex: 50,
           opacity: 0.75,
           fontSize: "16px",
-          fontFamily: '"Tajawal", sans-serif',
+          fontFamily: '"IBM Plex Sans Arabic", sans-serif',
           fontWeight: 600,
         }}
       >
@@ -328,7 +328,7 @@ const SlidePreview: React.FC<Props> = ({ slide }) => {
             display: "flex",
             alignItems: "center",
             gap: "10px",
-            fontFamily: '"Cairo", sans-serif',
+            fontFamily: '"IBM Plex Sans Arabic", sans-serif',
             fontSize: '14px',
             letterSpacing: '0.5px',
           }}

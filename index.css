@@ -6,9 +6,10 @@
 /* المتغيرات العامة - ألوان منصة التاجر */
 :root {
   /* Fonts */
-  --font-cairo: "Cairo", sans-serif;
-  --font-tajawal: "Tajawal", sans-serif;
-  --font-almarai: "Almarai", sans-serif;
+  --font-cairo: "IBM Plex Sans Arabic", sans-serif;
+  --font-tajawal: "IBM Plex Sans Arabic", sans-serif;
+  --font-almarai: "IBM Plex Sans Arabic", sans-serif;
+  --font-ibm: "IBM Plex Sans Arabic", sans-serif;
   
   /* Al-Tajer Digital Color Palette */
   --bg-white: #FFFFFF;
@@ -62,7 +63,7 @@
 }
 
 body {
-  font-family: var(--font-tajawal);
+  font-family: var(--font-ibm);
   background-color: var(--bg-light);
   margin: 0;
   padding: 0;
@@ -233,7 +234,7 @@ body {
 }
 
 .header-title h1 {
-  font-family: var(--font-cairo);
+  font-family: var(--font-ibm);
   font-size: 1.5rem;
   font-weight: 800;
   color: var(--headline-charcoal);
@@ -366,7 +367,7 @@ body {
 }
 
 .export-loading-text {
-  font-family: var(--font-cairo);
+  font-family: var(--font-ibm);
   font-weight: 700;
   color: var(--headline-charcoal);
   margin: 0;
@@ -497,7 +498,7 @@ body {
   color: var(--text-tertiary);
   font-size: 0.875rem;
   font-weight: 500;
-  font-family: var(--font-tajawal);
+  font-family: var(--font-ibm);
   background: var(--bg-white);
   padding: 0.5rem 1.25rem;
   border-radius: var(--radius-full);
@@ -565,7 +566,7 @@ body {
 
 /* العنوان الرئيسي */
 .slide-title {
-  font-family: var(--font-cairo);
+  font-family: var(--font-ibm);
   font-size: 2rem;
   font-weight: 900;
   margin: 0;
@@ -596,7 +597,7 @@ body {
 
 .slide-subtitle {
   position: relative;
-  font-family: var(--font-tajawal);
+  font-family: var(--font-ibm);
   font-size: 1rem;
   font-weight: 500;
   text-align: center;
@@ -629,7 +630,7 @@ body {
 }
 
 .slide-percentage-shadow {
-  font-family: var(--font-cairo);
+  font-family: var(--font-ibm);
   font-size: 3rem;
   font-weight: 900;
   font-style: italic;
@@ -648,7 +649,7 @@ body {
 }
 
 .slide-percentage-main {
-  font-family: var(--font-cairo);
+  font-family: var(--font-ibm);
   font-size: 2.5rem;
   font-weight: 800;
   position: relative;
@@ -690,7 +691,7 @@ body {
 }
 
 .slide-stat-value {
-  font-family: var(--font-cairo);
+  font-family: var(--font-ibm);
   font-size: 1.125rem;
   font-weight: 700;
   margin: 0;
@@ -703,7 +704,7 @@ body {
 }
 
 .slide-stat-label {
-  font-family: var(--font-tajawal);
+  font-family: var(--font-ibm);
   font-size: 0.625rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -721,7 +722,7 @@ body {
 .slide-comparison-badge {
   padding: 0.375rem 0.75rem;
   color: var(--bg-white);
-  font-family: var(--font-tajawal);
+  font-family: var(--font-ibm);
   font-size: 0.7rem;
   font-weight: 700;
   border-radius: var(--radius-full);
@@ -742,7 +743,7 @@ body {
 }
 
 .slide-description {
-  font-family: var(--font-tajawal);
+  font-family: var(--font-ibm);
   font-size: 0.75rem;
   line-height: 1.8;
   text-align: center;
@@ -852,7 +853,7 @@ body {
 }
 
 .ai-assistant-title {
-  font-family: var(--font-cairo);
+  font-family: var(--font-ibm);
   font-weight: 700;
   font-size: 1.125rem;
   margin: 0;
@@ -867,7 +868,7 @@ body {
   width: 100%;
   height: 6rem;
   padding: 1rem;
-  font-family: var(--font-tajawal);
+  font-family: var(--font-ibm);
   font-size: 0.875rem;
   background-color: var(--bg-white);
   border: 1.5px solid var(--border-light);
@@ -890,7 +891,7 @@ body {
   padding: 0.5rem 1rem;
   background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-blue-dark) 100%);
   color: var(--bg-white);
-  font-family: var(--font-tajawal);
+  font-family: var(--font-ibm);
   font-size: 0.75rem;
   font-weight: 700;
   border-radius: var(--radius-full);
@@ -941,7 +942,7 @@ body {
 }
 
 .form-section-title {
-  font-family: var(--font-cairo);
+  font-family: var(--font-ibm);
   font-weight: 700;
   color: var(--headline-charcoal);
   margin: 0;
@@ -970,7 +971,7 @@ body {
 
 .form-label {
   display: block;
-  font-family: var(--font-tajawal);
+  font-family: var(--font-ibm);
   font-size: 0.75rem;
   font-weight: 600;
   color: var(--text-secondary);
@@ -984,7 +985,7 @@ body {
   background-color: var(--bg-slate-50);
   border: 1.5px solid var(--border-light);
   border-radius: var(--radius-md);
-  font-family: var(--font-tajawal);
+  font-family: var(--font-ibm);
   font-size: 0.875rem;
   outline: none;
   transition: all 0.2s;
@@ -1003,7 +1004,7 @@ body {
   background-color: var(--bg-slate-50);
   border: 1.5px solid var(--border-light);
   border-radius: var(--radius-md);
-  font-family: var(--font-tajawal);
+  font-family: var(--font-ibm);
   font-size: 0.875rem;
   outline: none;
   resize: vertical;
@@ -1037,7 +1038,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  font-family: var(--font-tajawal);
+  font-family: var(--font-ibm);
   font-size: 0.75rem;
   font-weight: 600;
   color: var(--text-tertiary);
@@ -1063,7 +1064,7 @@ body {
 }
 
 .css-panel-title {
-  font-family: var(--font-cairo);
+  font-family: var(--font-ibm);
   font-weight: 700;
   font-size: 1.125rem;
   color: #2DD4BF;
@@ -1097,7 +1098,7 @@ body {
   font-weight: 700;
   display: block;
   margin-bottom: 0.5rem;
-  font-family: var(--font-tajawal);
+  font-family: var(--font-ibm);
 }
 
 .css-info-content {
@@ -1131,7 +1132,7 @@ body {
   border-radius: var(--radius-md);
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.2s;
-  font-family: var(--font-tajawal);
+  font-family: var(--font-ibm);
   font-size: 0.875rem;
   font-weight: 600;
   cursor: pointer;
@@ -1158,7 +1159,7 @@ body {
 }
 
 .theme-panel-title {
-  font-family: var(--font-cairo);
+  font-family: var(--font-ibm);
   font-weight: 700;
   font-size: 1.125rem;
   display: flex;
@@ -1179,7 +1180,7 @@ body {
 }
 
 .theme-section-title {
-  font-family: var(--font-tajawal);
+  font-family: var(--font-ibm);
   font-size: 0.8rem;
   font-weight: 700;
   color: var(--text-secondary);
@@ -1243,7 +1244,7 @@ body {
 }
 
 .theme-card-name {
-  font-family: var(--font-tajawal);
+  font-family: var(--font-ibm);
   font-size: 0.75rem;
   font-weight: 700;
   color: var(--headline-charcoal);
@@ -1297,7 +1298,7 @@ body {
 
 .logo-label {
   display: block;
-  font-family: var(--font-tajawal);
+  font-family: var(--font-ibm);
   font-size: 0.8rem;
   font-weight: 700;
   color: var(--headline-charcoal);
@@ -1362,7 +1363,7 @@ body {
   background-color: var(--bg-white);
   border: 1.5px solid var(--border-light);
   border-radius: var(--radius-md);
-  font-family: var(--font-tajawal);
+  font-family: var(--font-ibm);
   font-size: 0.75rem;
   outline: none;
   transition: all 0.2s;
@@ -1392,7 +1393,7 @@ body {
 }
 
 .logo-hint {
-  font-family: var(--font-tajawal);
+  font-family: var(--font-ibm);
   font-size: 0.625rem;
   color: var(--text-tertiary);
 }
@@ -1484,7 +1485,7 @@ body {
 
 .color-label {
   display: block;
-  font-family: var(--font-tajawal);
+  font-family: var(--font-ibm);
   font-size: 0.7rem;
   font-weight: 600;
   color: var(--text-secondary);
@@ -1547,7 +1548,7 @@ body {
   background-color: var(--bg-white);
   border: 1.5px solid var(--border-light);
   border-radius: var(--radius-md);
-  font-family: var(--font-tajawal);
+  font-family: var(--font-ibm);
   font-size: 0.875rem;
   outline: none;
   transition: all 0.2s;
